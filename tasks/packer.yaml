@@ -6,5 +6,6 @@
     dest: "{{ [nvim_packer_path, 'nvim/site/pack/packer/start/packer.nvim'] | path_join }}"
     depth: 1
     accept_newhostkey: true
-  when: 
+    version: master
+  when:
     - nvim_install_packer | bool

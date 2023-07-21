@@ -1,5 +1,5 @@
 nvim_packages:
-  - git-core 
+  - git-core
   - fd-find
   - ripgrep
   - xsel

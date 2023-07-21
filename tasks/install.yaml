@@ -3,7 +3,7 @@
   ansible.builtin.unarchive:
     src: "https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
     dest: "{{ nvim_install_path }}"
-    remote_src: yes
+    remote_src: true
 
 - name: Create symbolic link to bin
   ansible.builtin.file:

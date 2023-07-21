@@ -1,6 +1,0 @@
----
-warn_list:
-  - yaml
-
-skip_list:
-  - yaml[colons]
