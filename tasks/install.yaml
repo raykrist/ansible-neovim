@@ -1,0 +1,15 @@
+---
+- name: Download latest version from github
+  ansible.builtin.unarchive:
+    src: "https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
+    dest: "{{ nvim_install_path }}"
+    remote_src: yes
+
+- name: Create symbolic link to bin
+  ansible.builtin.file:
+    src: "{{ [nvim_install_path, 'nvim-linux64/bin/nvim'] | path_join }}"
+    dest: "{{ [nvim_bin_path, 'nvim'] | path_join }}"
+    owner: "{{ nvim_owner | default(omit) }}"
+    group: "{{ nvim_group | default(omit) }}"
+    state: link
+  ignore_errors: "{{ ansible_check_mode }}"

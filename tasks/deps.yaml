@@ -1,0 +1,13 @@
+---
+- name: Refresh apt repos
+  ansible.builtin.apt:
+     update_cache: true
+  when:
+    - ansible_os_family == "Debian"
+  check_mode: false
+
+- name: Install nvim packages
+  ansible.builtin.package:
+    name: "{{ nvim_packages | default([]) }}"
+    state: present
+  when: nvim_install_packages

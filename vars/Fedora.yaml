@@ -1,0 +1,7 @@
+nvim_packages:
+  git-core: {}
+  fd-find: {}
+  ripgrep: {}
+  xsel: {}
+  python3.11: {}
+  java-latest-openjdk: {}

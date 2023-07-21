@@ -1,0 +1,19 @@
+---
+
+- name: Gather OS specific variables
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yaml"
+        - "vars/{{ ansible_distribution }}.yaml"
+        - "vars/default.yaml"
+  tags: vars
+
+- name: Install package deps
+  ansible.builtin.import_tasks: deps.yaml
+
+- name: Install nvim
+  ansible.builtin.import_tasks: install.yaml
+
+- name: Install packer.nvim
+  ansible.builtin.import_tasks: packer.yaml

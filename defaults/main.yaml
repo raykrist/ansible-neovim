@@ -1,0 +1,8 @@
+---
+nvim_install_packages: true
+nvim_install_path: '/usr/local/share'
+nvim_bin_path: '/usr/local/bin'
+nvim_install_packer: true
+# default is $HOME for the ansible ssh user running the task
+nvim_packer_path: '.local/share'
+nvim_packer_install_as_root: false
