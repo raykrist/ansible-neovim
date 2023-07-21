@@ -1,9 +1,9 @@
 nvim_packages:
-  git: {}
-  xsel: {}
-  fd-find: {}
-  ripgrep: {}
-  python3.9-venv: {}
-  default-jdk-headless: {}
+  - git
+  - xsel
+  - fd-find
+  - ripgrep
+  - python3.9-venv
+  - default-jdk-headless
   - tar
   - gzip
