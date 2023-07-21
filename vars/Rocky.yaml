@@ -5,3 +5,5 @@ nvim_packages:
   - xsel
   - python3.11
   - java-latest-openjdk
+  - tar
+  - gzip
