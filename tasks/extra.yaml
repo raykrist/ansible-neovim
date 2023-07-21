@@ -1,0 +1,28 @@
+---
+- name: Install neovim python package
+  become: false
+  ansible.builtin.pip:
+    name: pynvim
+    executable: pip3.11
+  ignore_errors: "{{ ansible_check_mode }}"
+
+
+- name: Set node prefix
+  become: false
+  command: "npm set prefix {{ nvim_node_prefix }}"
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Install neovim node.js package
+  become: false
+  community.general.npm:
+    name: neovim
+    global: true
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Install neovim ruby gem
+  become: false
+  community.general.gem:
+    name: neovim
+    state: present
+    user_install: true
+  ignore_errors: "{{ ansible_check_mode }}"

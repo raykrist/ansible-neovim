@@ -17,3 +17,8 @@
 
 - name: Install packer.nvim
   ansible.builtin.import_tasks: packer.yaml
+
+- name: Setup extra nvim deps
+  ansible.builtin.import_tasks: extra.yaml
+  when:
+    - nvim_install_extra_deps

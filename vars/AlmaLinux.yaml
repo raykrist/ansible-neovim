@@ -4,6 +4,10 @@ nvim_packages:
   - ripgrep
   - xsel
   - python3.11
+  - python3.11-pip
   - java-latest-openjdk
+  - nodejs
+  - ruby-devel
   - tar
   - gzip
+  - gcc
