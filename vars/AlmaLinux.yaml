@@ -12,3 +12,4 @@ nvim_packages:
   - gzip
   - gcc
   - gcc-c++
+nvim_pip_executable: pip3.11

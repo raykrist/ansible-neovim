@@ -13,4 +13,4 @@ nvim_install_nerdfonts: false
 nvim_nerdfonts_install_dir: '~/.local/share/fonts/NerdFonts'
 nvim_nerdfonts_fonts:
   - fontname: 'Hack'
-  - fontname: 'DejaVu'
+  - fontname: 'DejaVuSansMono'

@@ -4,6 +4,10 @@ nvim_packages:
   - fd-find
   - ripgrep
   - python3.9-venv
+  - python3-pip
   - default-jdk-headless
   - tar
   - gzip
+  - npm
+  - ruby-dev
+  - fontconfig

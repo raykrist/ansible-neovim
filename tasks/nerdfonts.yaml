@@ -8,10 +8,6 @@
   loop: "{{ nvim_nerdfonts_fonts }}"
   tags: nerdfonts
 
-- debug:
-    msg: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ item.fontname }}.zip"
-  loop: "{{ nvim_nerdfonts_fonts }}"
-
 - name: 'Download specified Nerd Fonts for user-specific installation'
   ansible.builtin.unarchive:
     src: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ item.fontname }}.zip"
@@ -29,4 +25,3 @@
   changed_when: nerdfonts_download.changed
   become: false
   tags: nerdfonts
-

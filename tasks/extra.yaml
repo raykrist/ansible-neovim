@@ -3,7 +3,7 @@
   become: false
   ansible.builtin.pip:
     name: pynvim
-    executable: pip3.11
+    executable: "{{ nvim_pip_executable | default(omit) }}"
   ignore_errors: "{{ ansible_check_mode }}"
 
 
