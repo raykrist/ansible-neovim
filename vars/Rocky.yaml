@@ -11,3 +11,4 @@ nvim_packages:
   - tar
   - gzip
   - gcc
+  - gcc-c++

@@ -1,0 +1,31 @@
+---
+- name: Create local font dir
+  become: false
+  ansible.builtin.file:
+    path: "{{ nvim_nerdfonts_install_dir }}/{{ item.fontname }}"
+    state: directory
+    mode: '0755'
+  loop: "{{ nvim_nerdfonts_fonts }}"
+  tags: nerdfonts
+
+- debug:
+    msg: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ item.fontname }}.zip"
+  loop: "{{ nvim_nerdfonts_fonts }}"
+
+- name: 'Download specified Nerd Fonts for user-specific installation'
+  ansible.builtin.unarchive:
+    src: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/{{ item.fontname }}.zip"
+    dest: "{{ nvim_nerdfonts_install_dir }}/{{ item.fontname }}"
+    remote_src: true
+  become: false
+  register: nerdfonts_download
+  until: nerdfonts_download is succeeded
+  loop: "{{ nvim_nerdfonts_fonts }}"
+  tags: nerdfonts
+
+- name: 'Install NerdFonts'
+  ansible.builtin.command: "fc-cache -f {{ nvim_nerdfonts_install_dir }}"
+  changed_when: nerdfonts_download.changed
+  become: false
+  tags: nerdfonts
+

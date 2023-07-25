@@ -4,3 +4,13 @@ nvim_install_path: '/usr/local/share'
 nvim_bin_path: '/usr/local/bin'
 nvim_install_extra_deps: true
 nvim_node_prefix: '$HOME/.local'
+nvim_npm_packages:
+  - neovim
+  - tree-sitter
+  - tree-sitter-cli
+
+nvim_install_nerdfonts: false
+nvim_nerdfonts_install_dir: '~/.local/share/fonts/NerdFonts'
+nvim_nerdfonts_fonts:
+  - fontname: 'Hack'
+  - fontname: 'DejaVu'

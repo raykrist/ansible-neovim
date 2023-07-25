@@ -12,11 +12,12 @@
   command: "npm set prefix {{ nvim_node_prefix }}"
   ignore_errors: "{{ ansible_check_mode }}"
 
-- name: Install neovim node.js package
+- name: Install nodejs packages
   become: false
   community.general.npm:
-    name: neovim
+    name: "{{ item }}"
     global: true
+  loop: "{{ nvim_npm_packages }}"
   ignore_errors: "{{ ansible_check_mode }}"
 
 - name: Install neovim ruby gem
