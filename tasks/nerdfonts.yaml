@@ -22,6 +22,7 @@
   until: nerdfonts_download is succeeded
   loop: "{{ nvim_nerdfonts_fonts }}"
   tags: nerdfonts
+  ignore_errors: "{{ ansible_check_mode }}"
 
 - name: 'Install NerdFonts'
   ansible.builtin.command: "fc-cache -f {{ nvim_nerdfonts_install_dir }}"
