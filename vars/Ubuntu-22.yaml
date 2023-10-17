@@ -4,7 +4,6 @@ nvim_packages:
   - fd-find
   - ripgrep
   - python3.11-venv
-  - python3.11-pip
   - default-jdk-headless
   - tar
   - gzip
