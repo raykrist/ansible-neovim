@@ -12,4 +12,5 @@ nvim_packages:
   - gzip
   - gcc
   - gcc-c++
+  - redhat-rpm-config
 nvim_pip_executable: pip3.11
